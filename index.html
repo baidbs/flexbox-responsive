@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flexbox CSS</title>
+    <!--my css-->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="wrapper">
+        <header class="header">
+            <h1>SELAMAT DATANG CUYYYY</h1>
+        </header>
+     <nav class="nav">
+        <ul>
+            <h3><li><a href="https://id.wikipedia.org/wiki/Ron_Dennis">McLaren</a></li></h3>
+        </ul>
+    </nav>
+    <article class="main" id="mclaren">
+        <img src="mc1.jpg" width="800px" height="300px" alt="" class="active">
+        <img src="mc2.jpg" width="800px" height="300px" alt="Gambar 2" class="hidden">
+        <img src="mc3.jpg" width="800px" height="300px" alt="Gambar 3" class="hidden"> 
+        <img src="mc4.jpg" width="800px" height="300px" alt="Gambar 3" class="hidden">
+        <button class="next-btn">></button> 
+    </article>
+    <aside class="aside aside1">
+        <p>sejarah</p><br>
+        <p>Ronald "Ron" Dennis (lahir 1 Juni 1947) adalah seorang pengusaha asal Inggris. Ia pernah dikenal luas sebagai pemilik tim balap Formula Satu McLaren.</p>
+        <img src="p.jpg" width="340px" height="140px">
+    </aside>
+    <footer class="footer">
+        <p>Email: McLarenLuWarnaAapaBosss?@gmail.com</p>
+        <p>Phone: +6222834567890</p>
+    </footer>
+    </div>
+    <script>
+        const images = document.querySelectorAll('.main img');
+        const nextBtn = document.querySelector('.next-btn');
+        let currentIndex = 0;
+
+        function showNextImage() {
+        images[currentIndex].classList.remove('active');
+        images[currentIndex].classList.add('hidden');
+
+        currentIndex = (currentIndex + 1) % images.length;
+
+        images[currentIndex].classList.remove('hidden');
+        images[currentIndex].classList.add('active');
+        }
+
+        nextBtn.addEventListener('click', showNextImage);
+    </script>
+</body>
+</html>
